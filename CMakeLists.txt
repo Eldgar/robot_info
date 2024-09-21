@@ -102,12 +102,8 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES robot_info
-#  CATKIN_DEPENDS robotinfo_msgs roscpp
-#  DEPENDS system_lib
+  INCLUDE_DIRS include
 )
-
 ###########
 ## Build ##
 ###########
@@ -115,7 +111,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -204,7 +200,7 @@ include_directories(
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
 add_executable(robot_info_node src/robot_info_main.cpp src/robot_info_class.cpp)
-add_executable(agv_robot_info_node src/agv_robot_info_main.cpp src/agv_robot_info_class.cpp)
+add_executable(agv_robot_info_node src/agv_robot_info_main.cpp src/agv_robot_info_class.cpp src/hydraulic_system_monitor.cpp)
 
 target_link_libraries(robot_info_node ${catkin_LIBRARIES})
 target_link_libraries(agv_robot_info_node ${catkin_LIBRARIES})

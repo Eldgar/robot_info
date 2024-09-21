@@ -1,6 +1,6 @@
 // robot_info_class.cpp
 #include <ros/ros.h>
-#include <robotinfo_msgs/RobotInfo10Fields.h>  // Updated to use the correct message
+#include <robotinfo_msgs/RobotInfo10Fields.h>
 
 class RobotInfo {
 public:
@@ -23,7 +23,6 @@ public:
     void setFirmwareVersion(const std::string& firmware_version) {
         firmware_version_ = firmware_version;
     }
-
 
     virtual void publish_data() {
         robotinfo_msgs::RobotInfo10Fields msg;
